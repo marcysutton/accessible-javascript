@@ -5,6 +5,16 @@ html, body {
 main {
 	padding: 1em;
 }
+h2 {
+	font-size: 1.5em;
+}
+.demos {
+	display: flex;
+	justify-content: center;
+}
+.demo-group {
+	min-width: 300px;
+}
 .icon {
 	display: block;
 	width: 3em;

@@ -72,7 +72,7 @@
 						<li class="fragment">Car phones in Miatas</li>
 					</ul>
 					<h3 style="margin-top: 5%" class="fragment">The Web has evolved. Yay! <br />
-						<span class="regular-case">How do we not repeat the same mistakes?</span>
+						<span class="regular-case">How do we code for accessibility now?</span>
 					</h3>
 					<aside class="notes">
 					<ul>
@@ -125,12 +125,12 @@
 		        </section>
 
 		        <section>
-			        <h2>Semantics Demos</h2>
-			        <aside class="notes">
-			        	-Headings bookmarklet
-			        	-Landmarks bookmarklet
-			        	-Chrome Canary demo
-			       	</aside>
+			        <h2>Demos</h2>
+			        <ul>
+				        <li><a href="http://pauljadam.com/bookmarklets/headings.html">Headings bookmarklet</a></li>
+				        <li><a href="http://pauljadam.com/bookmarklets/landmarks.html">Landmarks bookmarklet</a></li>
+			        	<li><a href="https://groups.google.com/a/chromium.org/forum/#!topic/chromium-accessibility/zmWfzZic9fE">Chrome Canary demo</a></li>
+			        </ul>
 		        </section>
 
 		        <section>
@@ -185,7 +185,7 @@
 					<p><a href="https://www.w3.org/TR/aria-in-html/#notes-on-aria-use-in-html">Notes on ARIA use in HTML</a></p>
 				</section> -->
 
-		        <section>
+		        <section data-transition="none">
 		          <h2>Creating accessible actions</h2>
 		          <div class="">
 		            <figure class="code">
@@ -205,8 +205,37 @@
 		              <pre id="wallace-gromit"><code class="html">
   &lt;a ng-href="#/wrong-trousers">Techno-Trousers&lt;/a>
 
-  &lt;button ng-click="start()" aria-label="Start Morning Routine">
+  &lt;button ng-click="start()" aria-label="Start Day">
       &lt;i class="icon">&lt;/i>
+  &lt;/button>
+		              </code></pre>
+		            </figure>
+		          </div>
+				</section>
+
+				<section data-transition="none">
+		          <h2>Creating accessible actions <span class="offscreen">Continued</span></h2>
+		          <div class="">
+		            <figure class="code">
+			            <figcaption>Empty buttons and links: bad!</figcaption>
+			            <pre><code class="html">
+  &lt;a ng-href="#/wrong-trousers">&lt;/a>
+
+  &lt;button ng-click="start()">
+    &lt;i class="icon">&lt;/i>
+  &lt;/button>
+			            </code></pre>
+			          </figure>
+				  </div>
+		          <div class="">
+		            <figure class="code">
+		              <figcaption>Unique and purposeful link text: good!</figcaption>
+		              <pre id="wallace-gromit"><code class="html">
+  &lt;a ng-href="#/wrong-trousers">Techno-Trousers&lt;/a>
+
+  &lt;button ng-click="start()">
+      &lt;i class="icon" aria-hidden="true">&lt;/i>
+      &lt;span class="icon-text">Start Day&lt;/span>
   &lt;/button>
 		              </code></pre>
 		            </figure>
@@ -281,7 +310,7 @@
 			  </section>
 
 			  <section>
-				  <h2 class="h1-style regular-case">But use native <br>buttons and links first.</h2>
+				  <h2 class="h1-style regular-case">Use native <br>buttons and links first.</h2>
 				  <p>They come with native ARIA semantics as well as keyboard support.</p>
 			  </section>
 
@@ -325,7 +354,7 @@
 					</div>
 					<div class="halfCol">
 						<figure class="code">
-						<pre><code class="html" style="min-height:400px;">
+						<pre><code class="html" style="min-height:400px; overflow: hidden;">
   &lt;ul>
     &lt;li>
       &lt;a href="#main">
@@ -373,21 +402,26 @@
 					  <h3>Focus management: a strategy</h3>
 					  <figure class="code">
 					  <pre><code class="javascript">
- class App.FocusManager
-   constructor: ->
-     $('body').on 'focusin', (e) =>
-       @oldFocus = $(e.target)
+ App.FocusManager = class FocusManager {
+   constructor() {
+     $('body').on('focusin', e => {
+       return this.oldFocus = $(e.target);
+     });
 
-     App.bind 'rendered', (e) =>
-       return unless @oldFocus
-       @_focusById() if @oldFocus.data('focus-id')
+     App.bind('rendered', e => {
+       if (!this.oldFocus) { return; }
+       if (this.oldFocus.data('focus-id')) { return this._focusById(); }
+     });
+   }
 
-   _focusById: ->
-     focusId = @oldFocus.data('focus-id')
-     newFocus = document.querySelector("##{focusId}")
-     MyApp.focus(newFocus) if newFocus
+   _focusById() {
+     let focusId = this.oldFocus.data('focus-id');
+     let newFocus = document.querySelector(`#${focusId}`);
+     if (newFocus) { return MyApp.focus(newFocus); }
+   }
+ };
 					  </code></pre>
-					  <figcaption>Coffeescript</figcaption>
+					  <figcaption>JavaScript</figcaption>
 					  </figure>
 				  </section>
 
@@ -400,7 +434,7 @@
     console.log(document.activeElement); 
   });
 					  </code></pre>
-					  <figcaption>jQuery</figcaption>
+					  <figcaption>JavaScript (jQuery)</figcaption>
 					  </figure>
 				  </section>
 
