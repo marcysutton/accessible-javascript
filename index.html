@@ -15,13 +15,13 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+		<link rel="stylesheet" href="css/theme/white.css" id="theme">
 
 		<link rel="stylesheet" href="plugin/accessibility-helpers/accessibility-helper.css">
 		<link rel="stylesheet" href="css/theme/custom.css" id="theme">
 
 		<!-- Code syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/tomorrow-night-bright.css">
+		<link rel="stylesheet" href="lib/css/tomorrow.css">
 
 		<!-- Printing and PDF exports -->
 		<script>
@@ -51,12 +51,12 @@
 					</p>
 				</section>
 
-				<section>
-					<h2>Oh hai!</h2>
+				<section data-background-color="#fff">
+					<h2>Who is Marcy Sutton?</h2>
 					<div id="oh-hai-images">
 						<div>
 							<img src="img/axe-core.png" alt="axe-core" class="axe plain">
-							<img src="img/w3c-a11ySlackers.png" alt="W3C A11y Slackers" class="slack plain">
+							<img src="img/web-a11y-slack.jpg" alt="Web-A11y Slack" class="slack plain">
 						</div>
 						<img src="img/angularjs-logo.png" alt="AngularJS" class="angular plain">
 						<img src="img/gdi_logo_badge.png" alt="Girl Develop It" class="gdi plain">
@@ -64,162 +64,165 @@
 				</section>
 
 				<section>
-					<h2>Remember the old days?</h2>
-          <ul>
-            <li class="fragment">Flash and keyboard navigation</li>
-            <li class="fragment">Screen readers and JavaScript</li>
-            <li class="fragment">Page reloads for data interactions</li>
-            <li class="fragment">Car phones in Miatas</li>
-          </ul>
-          <p style="margin-top: 5%" class="fragment">The Web has evolved. Yay! <br />How do we not repeat the same mistakes?</p>
-          <aside class="notes">
-            <ul>
-              <li>Browser inconsistencies w/ keyboard nav were a bitch</li>
-              <li>Flash accessibility required more effort. Poor access due to the nature of the "experience" (time-based, rapidly changing)</li>
-              <li>No fallback content == bad SEO. No live text in Flash even bad for Google (embedded in images or vectors)</li>
-            </ul>
-          </aside>
+					<h2>The old days</h2>
+					<ul>
+						<li class="fragment">Flash and keyboard navigation</li>
+						<li class="fragment">Screen readers and JavaScript</li>
+						<li class="fragment">Page reloads for data interactions</li>
+						<li class="fragment">Car phones in Miatas</li>
+					</ul>
+					<h3 style="margin-top: 5%" class="fragment">The Web has evolved. Yay! <br />
+						<span class="regular-case">How do we not repeat the same mistakes?</span>
+					</h3>
+					<aside class="notes">
+					<ul>
+					  <li>Browser inconsistencies w/ keyboard nav were a bitch</li>
+					  <li>Flash accessibility required more effort. Poor access due to the nature of the "experience" (time-based, rapidly changing)</li>
+					  <li>No fallback content == bad SEO. No live text in Flash even bad for Google (embedded in images or vectors)</li>
+					</ul>
+					</aside>
 				</section>
 
 				<section>
 					<h2>What is accessibility?</h2>
 					<h3><a href="http://www.w3.org/WAI/intro/accessibility.php" target="_blank" title="Link opens in a new window">W3.org</a></h3>
-          <blockquote>The Web is fundamentally designed to work for all people, whatever their hardware, software, language, culture, location, or physical or mental ability.</blockquote>
+		        	<blockquote style="font-style: normal;">
+		        		<p>The Web is fundamentally designed to work for all people, whatever their hardware, software, language, culture, location, or physical or mental ability.</p>
+		        	</blockquote>
 				</section>
 
-        <section>
-          <h2>Who are we talking about?</h2>
-          <ul>
-            <li>Blind &amp; Low Vision</li>
-            <li>Color-Blind</li>
-            <li>Deaf &amp; Hard of Hearing</li>
-            <li>Impaired Mobility</li>
-            <li>Cognitive/Learning</li>
-            <li class="fragment" style="margin-top: 8%;">AND EVERYONE ELSE</li>
-          </ul>
-          <aside class="notes">
-            <p>Note about aging population</p>
-          </aside>
-        </section>
+		        <section>
+		          <h2>Who are we talking about?</h2>
+		          <ul>
+		            <li>Blind &amp; Low Vision</li>
+		            <li>Color-Blind</li>
+		            <li>Deaf &amp; Hard of Hearing</li>
+		            <li>Impaired Mobility</li>
+		            <li>Cognitive/Learning</li>
+		            <li class="fragment" style="margin-top: 8%;">AND EVERYONE ELSE</li>
+		          </ul>
+		          <aside class="notes">
+		            <p>Note about aging population</p>
+		          </aside>
+		        </section>
 
-        <section>
-          <h2>Problematic Items</h2>
-            <div id="webaim-survey-problematic-items" style="background: url(img/webaim-survey-problematic-items.png) no-repeat center top; background-size: 60% auto; padding-top: 40%; width: 100%;">
-              <ul class="offscreen">
-                <li>The presence of inaccessible Flash content</li>
-                <li>CAPTCHA - images presenting text used to verify that you are a human user</li>
-                <li>Links or buttons that do not make sense</li>
-                <li>Images with missing or improper descriptions (alt text)</li>
-                <li>Screens or parts of screens that change unexpectedly</li>
-                <li>Complex or difficult forms</li>
-                <li>Lack of keyboard accessibility</li>
-                <li>Missing or improper headings</li>
-                <li>Too many links or navigation items</li>
-                <li>Complex data tables</li>
-                <li>Inaccessible or missing search functionality</li>
-                <li>Lack of "skip to main content" or "skip navigation" links</li>
-              </ul>
-            </div>
-            <small>Source: <a href="http://webaim.org/projects/screenreadersurvey4/" target="_blank" title="Link opens in a new window">WebAIM Screen Reader Survey, May 2012<span class="offscreen"> opens in a new window</span></a></small>
-        </section>
-
-        <section>
-        	<h2>Problematic Items&hellip;Updated</h2>
-        	<ul>
-        		<li>Icon buttons without text</li>
-        		<li>Unlabeled form controls</li>
-        		<li>Click events on DIVs</li>
-        		<li>Dropping keyboard focus</li>
-        		<li>Too subtle color contrast</li>
-        	</ul>
-        </section>
+		        <section>
+			        <h2>A holistic approach to accessibility<br>
+			        <span class="regular-case">makes the web better for everyone</span></h2>
+			        <a href="https://www.microsoft.com/en-us/design/practice#howwemake-section"><img data-src="img/injury.png" alt="Disabilities as permament or situational" style="max-height: 500px;"></a>
+		        </section>
 
 				<section>
-				  <h2>Web pages are more than <br>just visible</h2>
-				  <div>
-  				  <ul>
-  				    <li>Semantic HTML markup</li>
-  				    <li>Headings</li>
-  				    <li>Landmark roles</li>
-  				    <li>Form labels</li>
-  				    <li>Image alt text</li>
-  				    <li>Visually hidden text</li>
-            </ul>
-          </div>
-        </section>
+					<h2><span class="regular-case">Web pages are more than</span><br>just visible</h2>
+					<ul>
+						<li>Semantic HTML markup</li>
+						<li>Headings</li>
+						<li>Landmark roles</li>
+						<li>Form labels</li>
+						<li>Image alt text</li>
+						<li>Visually hidden text</li>
+					</ul>
+		        </section>
+
+		        <section>
+			        <h2>Semantics Demos</h2>
+			        <aside class="notes">
+			        	-Headings bookmarklet
+			        	-Landmarks bookmarklet
+			        	-Chrome Canary demo
+			       	</aside>
+		        </section>
+
+		        <section>
+					<h2><span class="regular-case">Web content is more than</span><br>just audible</h2>
+					<ul>
+						<li>Video/audio captions</li>
+						<li>Transcripts</li>
+						<li>Audio descriptions</li>
+						<li>User interactions</li>
+					</ul>
+					<aside class="notes">
+					  User interaction: Apple password fail with shake + sound
+					</aside>
+		        </section>
+
+		        <section>
+			        <h2 style="margin-bottom: 0;">Low contrast <br><span class="regular-case">impacts people more than you think</span></h2>
+			        <p style="margin-top:0;">
+			        	<a href="http://webaim.org/articles/visual/lowvision">http://webaim.org/articles/visual/lowvision</a>
+			        </p>
+			        <div class="layeredFragments">
+			        	<div>
+					        <img data-src="img/footerstyle-ss1.png" alt="Low contrast footer" class="plain" style="max-width: 1200px;">
+					    </div>
+				        <div class="fragment">
+					        <img data-src="img/footerstyle-ss2.jpg" alt="Low contrast footer with simulated vision impairment" class="plain" style="max-width: 1200px;">
+					    </div>
+				    </div>
+		        </section>
+
+		        <section data-background-color="#fff">
+					<h2 style="margin-bottom: 0;"><span class="regular-case">But you came to hear about</span><br>
+						Accessibility &amp; JavaScript</h2>
+					<img data-src="img/react-hype.jpg" alt="JavaScript Framework Hotness" class="plain" style="max-height: 500px;">
+				</section>
 
 				<section>
+					<h2>Let&rsquo;s talk about:</h2>
+					<ul>
+						<li class="fragment">Keyboard events</li>
+		        		<li class="fragment">Icon buttons</li>
+						<li class="fragment">Focus management</li>
+						<li class="fragment">Testing tools</li>
+					</ul>
+		        </section>
+
+				<!-- <section>
 					<h2><a href="https://www.w3.org/TR/wai-aria/">WAI-ARIA</a></h2>
 					<h3 class="regular-case">Web Accessibility Initiative - <br>Accessible Rich Internet Applications</h3>
 					<blockquote>A standard set of HTML attributes for applying accessible roles, states and properties</blockquote>
 					–
 					<p><a href="https://www.w3.org/TR/aria-in-html/#notes-on-aria-use-in-html">Notes on ARIA use in HTML</a></p>
-				</section>
+				</section> -->
 
-        <section>
-          <h2>Creating accessible actions</h2>
-          <div class="">
-            <figure class="code">
-	            <pre><code class="html">
+		        <section>
+		          <h2>Creating accessible actions</h2>
+		          <div class="">
+		            <figure class="code">
+			            <figcaption>Empty buttons and links: bad!</figcaption>
+			            <pre><code class="html">
   &lt;a ng-href="#/wrong-trousers">&lt;/a>
 
   &lt;button ng-click="start()">
     &lt;i class="icon">&lt;/i>
   &lt;/button>
-	            </code></pre>
-	            <figcaption>Empty buttons and links: bad!</figcaption>
-	          </figure>
+			            </code></pre>
+			          </figure>
 				  </div>
-          <div class="fragment">
-            <figure class="code">
-              <pre id="wallace-gromit"><code class="html">
+		          <div class="fragment">
+		            <figure class="code">
+		              <figcaption>Unique and purposeful link text: good!</figcaption>
+		              <pre id="wallace-gromit"><code class="html">
   &lt;a ng-href="#/wrong-trousers">Techno-Trousers&lt;/a>
 
-  &lt;button ng-click="start()">
-      &lt;i class="icon" aria-label="Start Morning Routine">&lt;/i>
+  &lt;button ng-click="start()" aria-label="Start Morning Routine">
+      &lt;i class="icon">&lt;/i>
   &lt;/button>
-              </code></pre>
-              <figcaption>Unique and purposeful link text: good!</figcaption>
-            </figure>
-          </div>
-				</section>
-
-				<section data-transition="none">
-          <h2>Creating accessible actions<span class="offscreen">(cont'd)</span></h2>
-          <div class="">
-            <figure class="code">
-	            <pre><code class="html">
-  &lt;a ng-href="#/wrong-trousers">&lt;/a>
-
-  &lt;button ng-click="start()">
-    &lt;i class="icon">&lt;/i>
-  &lt;/button>
-	            </code></pre>
-	            <figcaption>Empty buttons and links: bad!</figcaption>
-	          </figure>
-				  </div>
-          <div class="">
-            <figure class="code">
-              <pre id="wallace-gromit"><code class="html">
-  &lt;a ng-href="the-wrong-trousers.html">Techno-Trousers&lt;/a>
-
-  &lt;button ng-click="start()">
-      &lt;span class="visuallyhidden">Start Morning Routine&lt;/span>
-      &lt;i class="icon" aria-hidden="true">&lt;/i>
-  &lt;/button>
-              </code></pre>
-              <figcaption>Broader support: good!</figcaption>
-            </figure>
-          </div>
+		              </code></pre>
+		            </figure>
+		          </div>
 				</section>
 
 				<section>
-			    <h2>&ldquo;Hidden&rdquo; vs. &ldquo;Offscreen&rdquo;</h2>
-			    <h3>CSS</h3>
+					<h2><a href="demos/buttons" target="_blank">Button Demo</a></h2>
+				</section>
+
+				<section>
+			    <h2>&ldquo;Hidden&rdquo; vs. &ldquo;Offscreen&rdquo; Styles</h2>
 				  <div class="halfCol">
 				  	<figure class="code">
 	  				  <pre><code class="css">
-  .reallyHidden {
+  [hidden] {
     display: none;
     visibility: hidden;
   }
@@ -230,7 +233,7 @@
 
 
 	  				  </code></pre>
-	  				  <figcaption>CSS</figcaption>
+	  				  <figcaption><em>CSS</em></figcaption>
 					  </figure>
 					</div>
 				  <div class="halfCol">
@@ -247,7 +250,7 @@
     width: 1px;
   }
 	  				  </code></pre>
-	  				  <figcaption>CSS</figcaption>
+	  				  <figcaption><em>CSS</em></figcaption>
 					  </figure>
 					</div>
 				  <div class="clear"></div>
@@ -255,37 +258,45 @@
 				</section>
 
 			  <section>
-          <h2>Keyboard navigation</h2>
-          <p><em>Any element can receive focus with a little help.</em></p>
+		          <h2>Keyboard navigation</h2>
+		          <p><em>Any element can receive focus with <code>tabindex="0"</code>.</em></p>
 				  <figure class="code">
   					<pre><code>
-   &lt;div class="nav-right" tabindex="0" role="button"&gt;
-      Next Slide
+   &lt;div tabindex="0" class="nav-right"
+   	role="button" aria-label="Next Slide"&gt;
    &lt;/div&gt;
   					</code></pre>
   					<figcaption><em>HTML</em></figcaption>
 				  </figure>
 				  <figure class="code">
-					  <pre><code>
-  $('.nav-right').on 'click keydown', (event) ->
-      if event.type === 'click' || event.keyCode === 13
-          navRightClicked()
+					<pre><code>
+  $('.nav-right').on('click keydown', (event) => {
+      if (event.type === 'click' || event.keyCode === 13) {
+          navRightClicked();
+      }
+  });
 					  </code></pre>
-						<figcaption><em>jQuery &amp; Coffeescript</em></figcaption>
+					<figcaption><em>jQuery</em></figcaption>
 				  </figure>
 			  </section>
 
-				<section>
-				  <h2>Skip Links</h2>
-				  <!-- insert gif/video here -->
-				  <video controls src="video/skip-links.mp4" style="max-height:500px;"></video>
+			  <section>
+				  <h2 class="h1-style regular-case">But use native <br>buttons and links first.</h2>
+				  <p>They come with native ARIA semantics as well as keyboard support.</p>
+			  </section>
+
+			<section>
+			  <h2>Skip Links</h2>
+			  <!-- insert gif/video here -->
+			  <video controls src="video/skip-links.mp4" style="max-height:500px;"></video>
 			  </section>
 
 			  <section>
-          <h2>Skip Links</h2>
+		          <h2>Skip Links</h2>
 				  <p>Useful for everyone. Make them visible on focus:</p>
+				  <div class="halfCol">
 				  <figure class="code">
-						<pre><code class="css" style="max-height: 400px;"> 
+					<pre><code class="css" style="max-height: 400px;"> 
   li.skip-link {
     display: block;
     margin: 0;
@@ -308,10 +319,89 @@
     outline: none;
   }
 
-	  					</code></pre>
-							<figcaption><em>SCSS</em></figcaption>
+  					</code></pre>
+					<figcaption><em>SCSS</em></figcaption>
+					</figure>
+					</div>
+					<div class="halfCol">
+						<figure class="code">
+						<pre><code class="html" style="min-height:400px;">
+  &lt;ul>
+    &lt;li>
+      &lt;a href="#main">
+        Skip to Main content
+      &lt;/a>
+    &lt;/li>
+  &lt;/ul>
+
+  &lt;main id="main" tabindex="-1">
+
+  &lt;/main>
+						</code></pre>
+						<figcaption><em>HTML</em></figcaption>
 						</figure>
-						<small><a href="http://codepen.io/marcysutton/pen/PZgbmm">http://codepen.io/marcysutton/pen/PZgbmm</a></small>
+					</div>
+					<small><a href="http://codepen.io/marcysutton/pen/PZgbmm">http://codepen.io/marcysutton/pen/PZgbmm</a></small>
+				  </section>
+
+				  <section>
+				  	<h2>Mega Menus</h2>
+					<video controls src="video/mega-menu.mp4" style="max-height:500px;"></video>
+				  </section>
+
+				  <section>
+					  <h3>Mega Menus (fixed)</h3>
+					  <ul>
+						  <li>Really hide inactive content</li>
+						  <li>Make top level links into toggles</li>
+						  <li>Close with escape key</li>
+					  </ul>
+				  </section>
+
+				  <section>
+					  <h2 style="margin-bottom: 0;">Focus Management</h2>
+					  <h3 class="regular-case">Ensure focus is not dropped</h3>
+					  <p><em>Important for:</em></p>
+					  <ul>
+						  <li class="fragment">Client-side rendering</li>
+						  <li class="fragment">Deleting items in a UI</li>
+						  <li class="fragment">Interactive widgets</li>
+					  </ul>
+				  </section>
+
+				  <section>
+					  <h3>Focus management: a strategy</h3>
+					  <figure class="code">
+					  <pre><code class="javascript">
+ class App.FocusManager
+   constructor: ->
+     $('body').on 'focusin', (e) =>
+       @oldFocus = $(e.target)
+
+     App.bind 'rendered', (e) =>
+       return unless @oldFocus
+       @_focusById() if @oldFocus.data('focus-id')
+
+   _focusById: ->
+     focusId = @oldFocus.data('focus-id')
+     newFocus = document.querySelector("##{focusId}")
+     MyApp.focus(newFocus) if newFocus
+					  </code></pre>
+					  <figcaption>Coffeescript</figcaption>
+					  </figure>
+				  </section>
+
+				  <section>
+					  <h3>Focus Management</h3>
+					  <h4 class="regular-case">Which item has focus? (debugging utility)</h4>
+					  <figure class="code">
+					  <pre><code class="javascript">
+  $('body').on('focusin', function() { 
+    console.log(document.activeElement); 
+  });
+					  </code></pre>
+					  <figcaption>jQuery</figcaption>
+					  </figure>
 				  </section>
 
 					<section>
@@ -320,7 +410,13 @@
 					</section>
 
 					<section>
-						<h2 class="regular-case">Hi aXe-core</h2>
+						<h2 class="regular-case">Paul Adam's Bookmarklets</h2>
+						<p><a href="http://pauljadam.com/bookmarklets/">http://pauljadam.com/bookmarklets/</a></p>
+						<a href="http://pauljadam.com/bookmarklets/"><img data-src="img/bookmarklets.gif" alt="Paul's Bookmarklets page" class="plain"></a>
+					</section>
+
+					<section>
+						<h2 class="regular-case"><a href="http://deque.com/products/axe">aXe-core</a><br>Open Source Accessibility Engine</h2>
 						<ul>
 							<li>Browser extensions</li>
 							<li>Unit test integration</li>
@@ -329,7 +425,7 @@
 					</section>
 
 					<section>
-						<h3><span class="regular-case">aXe</span> Chrome Extension</h3>
+						<h3><span class="regular-case">aXe</span> Chrome extension</h3>
 						<a href="https://chrome.google.com/webstore/detail/axe/lhdoppojpmngadmnindnejefpokejbdd?hl=en-US" target="_blank" class="img" style="margin-bottom: 0;">
 							<img src="img/axe-chrome-extension.png" alt="aXe Chrome extension" class="plain">
 						</a>
@@ -337,18 +433,21 @@
 
 					<section>
 						<h3>Unit Test Integration</h3>
-						<figure>
+						<figure class="code">
+							<pre><code class="bash">
+  npm install axe-core
+							</code></pre>
+						</figure>
+						<figure class="code" style="margin-top: 0.5em;" style="max-height: 430px;">
 							<pre><code class="javascript">
   describe('Form component', function () {
-    'use strict';
-
     document.getElementsByTagName('body')[0].insertAdjacentHTML('beforeend',
       '<fieldset id="username">' +
       '<label for="firstname">First name</label>' +
       '<input type="text" id="firstname">' +
 	  '</fieldset>');
 
-	it('should report that HTML is good', function (done) {
+	it('should have no accessibility errors', function (done) {
 	  var n = document.getElementById('username');
 	  axe.a11yCheck(n, null, function (result) {
 	  	expect(result.violations.length).toBe(0);
@@ -357,84 +456,85 @@
 	});
 							</code></pre>
 						</figure>
-						<p><small><a href="https://github.com/marcysutton/axe-jasmine-unit">https://github.com/marcysutton/axe-jasmine-unit</a></small></p>
+						<p><a href="https://github.com/marcysutton/axe-jasmine-unit">https://github.com/marcysutton/axe-jasmine-unit</a></p>
 					</section>
 
 					<section>
 						<h3>Webdriver Integration</h3>
-						<figure>
-							<pre><code class="javascript">
-	var selenium = require('selenium-webdriver'),
-	    AxeBuilder = require('axe-webdriverjs');
-
-	describe('Selenium-aXe Tutorial', function() {
-	    beforeEach(function(done) {
-	        this.driver = new selenium.Builder()
-	            .forBrowser('firefox').build();
-	        this.driver
-	            .get('http://www.deque.com/')
-	            .then(function() { done(); });
-	    });
-	    afterEach(function() {
-	        this.driver.quit();
-	    });
-	    it('Should have no accessibility violations', function(done) {
-	        AxeBuilder(this.driver)
-	            .analyze(function(results) {
-	                expect(results.violations.length).toBe(0);
-	                done();
-	            })
-	    });
-	});
+						<figure class="code">
+							<pre><code class="bash">
+  npm install axe-webdriverjs
 							</code></pre>
 						</figure>
-							<p><small><a href="https://github.com/marcysutton/axe-webdriverjs-demo">https://github.com/marcysutton/axe-webdriverjs-demo</a></small><p>
+						<figure class="code" style="margin-top: 0.5em;">
+						<figure>
+							<pre><code class="javascript" style="max-height: 430px;">
+  var selenium = require('selenium-webdriver'),
+      AxeBuilder = require('axe-webdriverjs');
+
+      describe('Selenium-aXe Tutorial', function() {
+        beforeEach(function(done) {
+          this.driver = new selenium.Builder()
+            .forBrowser('firefox').build();
+          this.driver
+            .get('http://localhost:8000')
+            .then(function() { done(); });
+        });
+        afterEach(function() {
+          this.driver.quit();
+        });
+        it('Should have no accessibility violations', function(done) {
+          AxeBuilder(this.driver)
+            .analyze(function(results) {
+              expect(results.violations.length).toBe(0);
+              done();
+            })
+        });
+      });
+							</code></pre>
+						</figure>
+						<p><a href="https://github.com/marcysutton/axe-webdriverjs-demo">https://github.com/marcysutton/axe-webdriverjs-demo</a><p>
 					</section>
 
 					<section>
 						<h3>Learn more on Github</h3>
-						<a href="https://github.com/dequelabs"><img src="img/deque-labs.jpg" alt="Deque Labs on Github" style="max-width: 700px;"></a>
+						<p><a href="https://github.com/dequelabs">https://github.com/dequelabs</a></p>
+						<div><a href="https://github.com/dequelabs" style="margin:0;"><img src="img/deque-labs.jpg" class="plain" alt="Deque Labs on Github" style="max-width: 700px;"></a></div>
 					</section>
 
-          <section>
-            <h2>Mobile</h2>
-            <blockquote class="twitter-tweet" align="center" data-conversation="none"><p><a href="https://twitter.com/marcysutton">@marcysutton</a> iPhone was the 1ST piece of tech I could use out of the box. Normally need sighted help to get screen reader installed etc.</p>&mdash; Steve Sawczyn (@steveofmaine) <a href="https://twitter.com/steveofmaine/statuses/388539435643441152">October 11, 2013</a></blockquote>
-            <blockquote class="twitter-tweet" align="center" data-conversation="none"><p><a href="https://twitter.com/marcysutton">@marcysutton</a> If you think about it, I can&#39;t even buy and use a microwave until someone helps me label touchpad.</p>&mdash; Steve Sawczyn (@steveofmaine) <a href="https://twitter.com/steveofmaine/statuses/388539569076850688">October 11, 2013</a></blockquote>
-            <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-          </section>
-
-          <section>
-            <h2>Should your mobile site <br>be accessible?</h2>
-            <div class="fragment">
-              <h3>YES.</h3>
-              <p><a href="https://www.youtube.com/watch?v=Jp6-9X-ZClk" target="_blank"><em>https://www.youtube.com/watch?v=Jp6-9X-ZClk</em></a></p>
-            </div>
-          </section>
-
-        <section>
-				  <h2>What else?</h2>
-				  <ul>
-				    <li class="fragment">Transcripts &amp; Captions</li>
-				    <li class="fragment">Captcha Alternatives</li>
-				    <li class="fragment">Progressive Enhancement</li>
-				  </ul>
-        </section>
+		        <section>
+		            <h2>Should your mobile site <br>be accessible?</h2>
+		            <div class="fragment">
+		              <h3>YES.</h3>
+		              <p><a href="https://www.youtube.com/watch?v=Jp6-9X-ZClk" target="_blank"><em>https://www.youtube.com/watch?v=Jp6-9X-ZClk</em></a></p>
+		            </div>
+		        </section>
 
 				<section>
-				  <h2>It’s About User Experience.</h2>
-				  <p><em>We can make it better.</em></p>
-  				<aside class="notes">
-  				  <h2>What else?</h2>
-  			    <ul>
-  			      <li>Feedback: hover/focus, updating widget instructions, external links, etc.</li>
-  			      <li>Tab order</li>
-  			      <li>Not trapping people in widgets they can’t get out of</li>
-  				    <li>Touch: make sure your events work</li>
-  			    </ul>
-			      <ul>
-  				    <li>A whole other talk: How accessibility and automated testing are BFFs</li>
-  			    </ul>
-			    </aside>
+					<h2>It’s About User Experience.</h2>
+					<p><em>We can make it better.</em></p>
+	  				<aside class="notes">
+	  				  <h2>What else?</h2>
+		  			    <ul>
+		  			      <li>Feedback: hover/focus, updating widget instructions, external links, etc.</li>
+		  			      <li>Tab order</li>
+		  			      <li>Not trapping people in widgets they can’t get out of</li>
+		  				    <li>Touch: make sure your events work</li>
+		  			    </ul>
+					      <ul>
+		  				    <li>A whole other talk: How accessibility and automated testing are BFFs</li>
+		  			    </ul>
+				    </aside>
+				</section>
+
+				<section>
+					<h2>Resources</h2>
+					<ul>
+						<li><a href="https://www.smashingmagazine.com/2015/05/client-rendered-accessibility/">Notes on Client-Rendered Accessibility</a></li>
+						<li><a href="http://simplyaccessible.com/article/spangular-accessibility/">Spangular Accessibility</a></li>
+						<li><a href="https://marcysutton.com/talk/jsconf-eu-2014/">Accessibility of MVC Frameworks - JSConf EU</a></li>
+						<li><a href="https://vimeo.com/118697675">A Web for Everybody - Smashing Conf Whistler</a></li>
+					</ul>
 				</section>
 
 				<section data-background-color="#ffffff">
